@@ -9,11 +9,7 @@ from threading import Thread
 import btpd_interface as btpd
 from torrent_model import Torrent
 from web_cache import *
-from app_config import BTPD_CACHE_EXPIRY
-
-
-UPLOAD_FOLDER = "/srv/torrent/torrent"
-ALLOWED_EXTENSIONS = {"torrent"}
+from app_config import *
 
 
 app=flask.Flask(__name__)
