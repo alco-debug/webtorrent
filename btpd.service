@@ -1,0 +1,19 @@
+[Unit]
+Description=BTPD BitTorrent Daemon
+After=network.target
+Documentation=https://github.com/btpd/btpd
+
+[Service]
+Type=forking
+User=www-data
+Group=www-data
+Environment=
+ExecStart=/usr/bin/btpd
+ExecStop=/usr/bin/btcli kill
+ExecReload=/usr/bin/btcli kill && /usr/bin/btpd
+#KillMode=mixed
+PrivateTmp=true
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
